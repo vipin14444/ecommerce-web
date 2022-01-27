@@ -1,0 +1,34 @@
+.modal-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.75);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.modal-hidden {
+    display: none;
+  }
+
+  .modal-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+
+    .modal-header {
+      display: flex;
+      font-weight: 600;
+      button {
+        margin-left: auto;
+      }
+    }
+
+    .modal-body {
+        margin-top: 1rem;
+    }
+
+    .modal-footer {
+        margin-top: 1rem;
+    }
+  }
+}
