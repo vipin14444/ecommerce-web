@@ -1,11 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgb(0, 81, 255);
+  border-left: 5px solid rgb(0, 81, 255);
 
   label {
     font-size: 0.8rem;
     font-weight: 700;
     margin-bottom: 5px;
+    color: rgb(0, 44, 138);
   }
 
   & + & {
@@ -14,7 +29,7 @@
 
   input,
   select {
-    padding: 0.45rem 0.75rem;
+    padding: 0.75rem 0.75rem;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     outline: none;
@@ -25,7 +40,8 @@
   }
 }
 
-button, .button {
+button,
+.button {
   padding: 0.75rem 1.25rem;
   background-color: cornflowerblue;
   border: none;
@@ -34,4 +50,113 @@ button, .button {
   border-radius: 4px;
   display: inline-flex;
   text-decoration: none;
+}
+
+header {
+  padding: 1.5rem 2rem;
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(27, 27, 27);
+  border-bottom: 1px solid whitesmoke;
+}
+
+.content {
+  padding: 2rem;
+}
+
+table {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+
+  border: 1px solid gray;
+  border-radius: 8px;
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: 1px solid gray;
+  }
+
+  td {
+    padding: 0.5rem 1rem;
+  }
+
+  th {
+    padding: 0.75rem 1rem;
+    color: rgb(0, 44, 138);
+  }
+
+  td + td,
+  th + th {
+    border-left: 1px solid gray;
+  }
+}
+
+.list-container {
+}
+
+.form-page {
+  max-width: 720px;
+
+  .page-actions {
+    margin-top: 2rem;
+  }
+}
+
+.trans-grid-container {
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgb(0, 81, 255);
+  border-left: 5px solid rgb(0, 81, 255);
+}
+
+.trans-actions {
+  // margin-top: 2rem;
+}
+
+.modal-container {
+  width: 100%;
+  max-width: 500px;
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid whitesmoke;
+  }
+
+  .modal-body {
+    margin-bottom: 2rem;
+  }
+  .modal-footer {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid whitesmoke;
+  }
+}
+
+.tfoot {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.pagination {
+  display: flex;
+  margin-left: auto;
+
+  .pagination-link {
+    padding: 0.25rem 0.8rem;
+    border: 1px solid rgb(0, 81, 255);
+    cursor: pointer;
+    color: rgb(0, 81, 255);
+
+    &.page-active {
+      background-color: rgb(0, 81, 255);
+      color: white;
+    }
+  }
 }

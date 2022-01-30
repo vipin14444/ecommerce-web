@@ -75,7 +75,7 @@ const Edit = () => {
   };
 
   return (
-    <div>
+    <div className="form-page">
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="prodName">Product Name</label>
@@ -118,8 +118,8 @@ const Edit = () => {
           setList={setAttributeGridList}
         />
 
-        <div>
-          <button type="submit">Save</button>
+        <div className="page-actions">
+          <button type="submit">Update</button>
         </div>
       </form>
     </div>

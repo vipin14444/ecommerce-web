@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import { api } from "../config";
 import { useNavigate } from "react-router-dom";
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 5;
 
 const MainGrid = () => {
   const [list, setList] = useState([]);
+  const [count, setCount] = useState(0);
   const [pageNo, setPageNo] = useState(0);
 
   const navigate = useNavigate();
@@ -16,16 +17,17 @@ const MainGrid = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getData = async () => {
+  const getData = async (pageNumber) => {
     try {
       const url = `${api}/product/GetList`;
       const data = {
         pageSize: PAGE_SIZE,
-        pageNo: pageNo,
+        pageNo: pageNumber || 0,
       };
       const response = await axios.post(url, data);
       if (response.data) {
-        setList(response.data.payload);
+        setList(response.data.payload.list);
+        setCount(response.data.payload.count);
       }
     } catch (err) {
       console.error(err);
@@ -33,7 +35,7 @@ const MainGrid = () => {
   };
 
   return (
-    <div>
+    <div className="list-container">
       <button onClick={(e) => navigate("/new")}>Add New Record</button>
       <table>
         <thead>
@@ -60,6 +62,25 @@ const MainGrid = () => {
           ))}
         </tbody>
       </table>
+      <div className="tfoot">
+        <div className="pagination">
+          {[...new Array(Math.ceil(parseInt(count) / PAGE_SIZE))].map(
+            (item, i) => (
+              <div
+                className={`pagination-link ${
+                  pageNo === i ? "page-active" : ""
+                }`}
+                onClick={() => {
+                  getData(i);
+                  setPageNo(i);
+                }}
+              >
+                {i + 1}
+              </div>
+            )
+          )}
+        </div>
+      </div>
     </div>
   );
 };

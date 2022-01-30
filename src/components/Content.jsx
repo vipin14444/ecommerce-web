@@ -6,13 +6,15 @@ import New from "./New";
 
 const Content = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/new" element={<New />} />
-        <Route path="/edit/:id" element={<Edit />} />
-        <Route path="/" element={<MainGrid />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="content">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/new" element={<New />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/" element={<MainGrid />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 

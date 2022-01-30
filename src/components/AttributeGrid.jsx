@@ -39,7 +39,7 @@ const AttributeGrid = ({ prodCategory, list, setList }) => {
   if (!prodCategory) return null;
 
   return (
-    <div>
+    <div className="trans-grid-container">
       <div className="trans-actions">
         <button type="button" onClick={showModal}>
           Add

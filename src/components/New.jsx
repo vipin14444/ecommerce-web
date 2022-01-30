@@ -55,7 +55,7 @@ const New = () => {
   };
 
   return (
-    <div>
+    <div className="form-page">
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="prodName">Product Name</label>
@@ -98,7 +98,7 @@ const New = () => {
           setList={setAttributeGridList}
         />
 
-        <div>
+        <div className="page-actions">
           <button type="submit">Save</button>
         </div>
       </form>
